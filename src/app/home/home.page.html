@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <form [formGroup]="form" (ngSubmit)="addCart()">
+    <ion-list>
+      <ion-item formArrayName="orders" *ngFor="let order of form.controls.orders.controls; let i = index">
+        <ion-checkbox slot="start" [formControlName]="i"></ion-checkbox>
+        <ion-label>
+          <ion-text>
+            <h2>{{orders[i].name}}</h2>
+          </ion-text>
+          <p>{{orders[i].description}}</p>
+        </ion-label>
+        <div slot="end">
+          ${{orders[i].price}}
+        </div>
+      </ion-item>
+    </ion-list>
+    <div *ngIf="!form.valid">At least one order must be selected</div>
+    <ion-button expand="block"  type='submit'>Encargar</ion-button>
+  </form>
+
+</ion-content>

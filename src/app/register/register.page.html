@@ -1,0 +1,107 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Crear mi cuenta
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding class="form-content">
+  <form [formGroup]="user_form" (ngSubmit)="onSubmit(user_form.value)">
+    <ion-item>
+      <ion-icon name="contact" slot="start"></ion-icon>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="key" slot="start"></ion-icon>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="password" type="password" required></ion-input>
+      <ion-icon name='eye' slot="end"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="key" slot="start"></ion-icon>
+      <ion-label position="floating">Repita Contraseña</ion-label>
+      <ion-input formControlName="passwordValidator" type="password" required></ion-input>
+      <ion-icon name='eye-off' slot="end"></ion-icon>
+    </ion-item>
+    <ion-input value="Datos personales" text-center readonly></ion-input>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input formControlName="name" type="text" required></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input formControlName="lastname" type="text" required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Celular</ion-label>
+          <ion-input formControlName="phone" type="text" required></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Celular Alternativo</ion-label>
+          <ion-input formControlName="alternativePhone" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-input value="Datos de envio" text-center readonly></ion-input>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Calle</ion-label>
+          <ion-input formControlName="street" type="text" required></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Altura</ion-label>
+          <ion-input formControlName="number" type="number" required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Piso</ion-label>
+          <ion-input formControlName="floor" type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Oficina</ion-label>
+          <ion-input formControlName="office" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-input value="Entre calles" text-center readonly></ion-input>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Calle 1</ion-label>
+          <ion-input formControlName="beetweenAddressOne" type="text" required></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Calle 2</ion-label>
+          <ion-input formControlName="beetweenAddressTwo" type="text" required></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-button color="primary" class="submit-btn" size="large" expand="block" type="submit">
+      Registrarme</ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="form-content">
+  <div *ngIf='existAddress'>
+    <ion-card>
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label>{{address.street}}</ion-label>
+      </ion-item>
+      <ion-card-content>
+        <p><strong>Calle</strong>: {{address.street}}</p>
+        <p><strong>Numero</strong>: {{address.number}}</p>
+        <p><strong>Oficina</strong>: {{address.office}}</p>
+        <p><strong>Piso</strong>: {{address.floor}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf='!existAddress'>
+    <form [formGroup]="address_form" (ngSubmit)="addAddress(address_form.value)">
+      <ion-input value="Datos de envio" text-center readonly></ion-input>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Calle</ion-label>
+            <ion-input formControlName="street" type="text" required></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Altura</ion-label>
+            <ion-input formControlName="number" type="number" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Piso</ion-label>
+            <ion-input formControlName="floor" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Oficina</ion-label>
+            <ion-input formControlName="office" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-input value="Entre calles" text-center readonly></ion-input>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Calle 1</ion-label>
+            <ion-input formControlName="beetweenAddressOne" type="text" required></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Calle 2</ion-label>
+            <ion-input formControlName="beetweenAddressTwo" type="text" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-button color="primary" class="submit-btn" expand="block" type="submit">
+        Confirmar datos</ion-button>
+    </form>
+  </div>
+</ion-content>

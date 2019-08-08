@@ -1,0 +1,7 @@
+{
+  "name": "viandas_sidemenu",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

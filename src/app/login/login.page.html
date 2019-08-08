@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Iniciar sesión
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h4 text-center margin-top>Bienvenido</h4>
+  <div text-center margin-top>
+
+    <ion-item>
+      <ion-icon name="contact" slot="start"></ion-icon>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="key" slot="start"></ion-icon>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+  </div>
+  <div text-center margin-top>
+    <ion-button href="#" color="primary">Entrar</ion-button>
+    <ion-button href='/register' color="primary">Crear una cuenta</ion-button>  
+  </div>
+</ion-content>
